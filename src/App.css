@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif', serif;
+  color: #004445;
+}
+
+/* HEADER */
+
+.header-emphasis {
+  color: #2c786c;
+}
+
+.header {
+  margin: 50px 0;
+}
+
+/* TAGS */
+
+.tags-container {
+  margin: 20px 0;
+}
+
+.tags-container a {
+  font-size: 12px;
+  color: black;
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid black;
+  border-radius: 50px;
+  transition: .2s ease-out;
+}
+
+.tags-container a:hover {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+.tags-container a:focus {
+  background-color: black;
+  color: white;
+}
+
+/* CARDS */
+
+.card-container {
+  margin: 10px 0;
+}
+
+.card-container-inner-container {
+  padding: 10px;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+.card-image-container img {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: -40px;
+}
+
+.card-container .card-title {
+  margin: 20px 0;
+}
+
+.card-details {
+  margin: 10px 0;
+}
+
+.card-details p {
+  display: inline;
+  padding: 0 5px;
+}
+
+.card-container .card-details p::before {
+  padding-right: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.card-container .card-sunlight::before{
+  content: url("icons/sunlight.svg");
+}
+
+.card-container .card-water::before{
+  content: url("icons/water.svg");
+
+}
+
+.card-container .card-rating::before{
+  content: url("icons/rating.svg");
+}
+
+.card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.card-button {
+  display: block;
+  width: 100%;
+  border: 1px solid #004445;
+  color: #004445;
+  padding: 15px;
+  margin: 15px 0;
+  text-decoration: none;
+  transition: .2s ease-in-out;
+}
+
+.clover-light {
+  cursor: url("icons/clover.svg"), auto;
+}
+
+.clover-dark {
+  cursor: url("icons/clover-dark.svg"), auto;
+}
+
+.card-button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #004445;
+  cursor: url("icons/clover.svg");
+}
