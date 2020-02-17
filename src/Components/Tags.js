@@ -4,11 +4,18 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useParams
   } from "react-router-dom";
 
-const Child = ({match}) => {
-    return <Cards params={match.params.id} />
+const Child = () => {
+    let {id} = useParams();
+    return (
+        <div>
+            <p className="tag-param">Tag: {id}</p>
+            <Cards params={id} />
+        </div>
+    );
 }
 
 const Tags = () => {
@@ -18,10 +25,10 @@ const Tags = () => {
             <Link className="clover-light" to="/minimal-sunlight">Minimal Sunlight</Link>
             <Link className="clover-light" to="/moderate-sunlight">Moderate Sunlight</Link>
             <Link className="clover-light" to="/intense-sunlight">Intense Sunlight</Link>
-            <Link className="clover-light" to="/less-water">Less Water</Link>
-            <Link className="clover-light" to="/much-water">Much Water</Link>
         </div>
+        <Switch>
         <Route path="/:id" component={Child} />
+        </Switch>
         </Router>
     );
 }
