@@ -1,34 +1,17 @@
-import React from 'react';
-import Cards from './Cards';
+import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams
   } from "react-router-dom";
 
-const Child = () => {
-    let {id} = useParams();
-    return (
-        <div>
-            <p className="tag-param">Tag: {id}</p>
-            <Cards params={id} />
-        </div>
-    );
-}
+const Tags = (props) => {
 
-const Tags = () => {
     return (
         <Router>
-        <div className="tags-container">
-            <Link className="clover-light" to="/minimal-sunlight">Minimal Sunlight</Link>
-            <Link className="clover-light" to="/moderate-sunlight">Moderate Sunlight</Link>
-            <Link className="clover-light" to="/intense-sunlight">Intense Sunlight</Link>
-        </div>
-        <Switch>
-        <Route path="/:id" component={Child} />
-        </Switch>
+            <Link className="clover-light" to={props.tagName} onClick={() => props.changeCurrentTag(props.tagName)}>{props.tagName}</Link>
+            <Route path="/:id" />
         </Router>
     );
 }

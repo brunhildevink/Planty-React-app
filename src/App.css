@@ -9,12 +9,24 @@ h1, h2, h3 {
 
 /* HEADER */
 
+.header a:hover {
+  text-decoration: none;
+}
+
+.planty-icon {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 25px;
+}
+
 .header-emphasis {
   color: #2c786c;
 }
 
 .header {
-  margin: 50px 0;
+  position: relative;
+  margin: 25px 0;
 }
 
 /* TAGS */
@@ -133,4 +145,10 @@ h1, h2, h3 {
   color: white;
   background-color: #004445;
   cursor: url("icons/clover.svg");
+}
+.error-message {
+  padding: 25px 0;
+}
+.sad-plants {
+  width: 500px;
 }
