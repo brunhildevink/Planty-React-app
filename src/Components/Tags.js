@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
-    Link,
+    NavLink,
   } from "react-router-dom";
 
 const Tags = (props) => {
 
     return (
         <Router>
-            <Link className="clover-light" to={props.tagName} onClick={() => props.changeCurrentTag(props.tagName)}>{props.tagName}</Link>
+            <NavLink id={props.tagName} className="clover-light" to={props.tagName} onClick={() => props.changeCurrentTag(props.tagName)}>{props.tagName}</NavLink>
             <Route path="/:id" />
         </Router>
     );

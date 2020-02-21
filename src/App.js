@@ -84,26 +84,29 @@ class App extends Component {
     console.log("current tag: ", this.state.currentTag);
     
     if(this.state.currentTag) {
-      this.filterPlantsHandler(this.state.currentTag)
-      // console.log(this.state.filteredData)
+      this.filterPlantsHandler(this.state.currentTag);
     }
   }
 
   changeCurrentTag = (props) => {
     this.setState({currentTag:props});
+    for(let i = 0; i < document.getElementsByClassName("active").length; i++) {
+      document.getElementsByClassName("active")[i].classList.remove("active");
+    }
+    document.getElementById(props).classList.add("active");
     this.filterPlantsHandler(props);
   }
 
   filterPlantsHandler = (props) => {
-    const filteredArray = []
+    const filteredArray = [];
     this.state.data.filter( (item) => {
       item.tags.map(index => {
         if(index === props) {
-          filteredArray.push(item)
+          filteredArray.push(item);
         }
-      })
+      });
     });
-    this.setState({filteredData:filteredArray})
+    this.setState({filteredData:filteredArray});
   }
 
   renderTags = () => {
@@ -141,7 +144,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;

@@ -51,9 +51,9 @@ h1, h2, h3 {
   background-color: black;
 }
 
-.tags-container a:focus {
+.active {
   background-color: black;
-  color: white;
+  color: white !important;
 }
 
 /* CARDS */
