@@ -11,7 +11,7 @@ const Header = (props) => {
     return (
         <div className="header">
             <Router>
-                <Link className="clover-dark" to="/" onClick={() => props.changeCurrentTag(props.tagName)}>
+                <Link id={"home"} className="clover-dark" to="/" onClick={() => props.changeCurrentTag(props.tagName)}>
                     <img src={Icon} className="planty-icon" />
                     <h1>Planty</h1>
                 </Link>

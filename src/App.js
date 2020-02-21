@@ -93,7 +93,9 @@ class App extends Component {
     for(let i = 0; i < document.getElementsByClassName("active").length; i++) {
       document.getElementsByClassName("active")[i].classList.remove("active");
     }
-    document.getElementById(props).classList.add("active");
+    if(!props === "home") {
+      document.getElementById(props).classList.add("active");
+    }
     this.filterPlantsHandler(props);
   }
 
