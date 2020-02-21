@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       data: [
         {
-            tags: ["minimal-sunlight", "much-water"],
+            tags: ["minimal-sunlight", "much-water", "color-green"],
             name: "Spider plant",
             sunlight: "Minimal",
             water: "3x a week",
@@ -39,7 +39,7 @@ class App extends Component {
             description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
         },
         {
-            tags: ["intense-sunlight", "much-water"],
+            tags: ["color-green", "intense-sunlight", "much-water"],
             name: "Monstera",
             sunlight: "Intense",
             water: "3x a week",
@@ -72,7 +72,8 @@ class App extends Component {
         "moderate-sunlight",
         "intense-sunlight",
         "much-water",
-        "not-much-water"
+        "less-water",
+        "color-green"
       ],
       currentTag: window.location.pathname.substring(1),
     }
@@ -80,11 +81,11 @@ class App extends Component {
 
   componentDidMount = () => {
     console.log("App mounted");
-    console.log(this.state.currentTag);
+    console.log("current tag: ", this.state.currentTag);
     
     if(this.state.currentTag) {
       this.filterPlantsHandler(this.state.currentTag)
-      console.log(this.state.filteredData)
+      // console.log(this.state.filteredData)
     }
   }
 
@@ -94,16 +95,20 @@ class App extends Component {
   }
 
   filterPlantsHandler = (props) => {
-    const filteredList = this.state.data.filter( (item) => {
-        return item.tags[0] === props;
+    const filteredArray = []
+    this.state.data.filter( (item) => {
+      item.tags.map(index => {
+        if(index === props) {
+          filteredArray.push(item)
+        }
+      })
     });
-    this.setState({filteredData:filteredList})
-    return filteredList;
+    this.setState({filteredData:filteredArray})
   }
 
   renderTags = () => {
     const tags = this.state.tags.map((tag, index) => 
-      <Tags key={index} tagName={tag} changeCurrentTag={this.changeCurrentTag}/>
+      <Tags key={index} tagName={tag} changeCurrentTag={this.changeCurrentTag}/>      
     );
     return tags;
   }

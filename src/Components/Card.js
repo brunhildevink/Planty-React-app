@@ -15,7 +15,7 @@ const Card = (props) => {
                 <p className="card-rating">{props.rating}</p>
             </div>
             <p className="card-description">{props.description}</p>
-            <a className="card-button clover-light" href="#">Read more</a>
+            <a className="card-button clover-light" href="read-more">Read more</a>
         </div>
     </Col>
     )
