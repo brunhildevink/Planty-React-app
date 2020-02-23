@@ -5,7 +5,7 @@ $anim-speed: 500ms;
     animation: card-in $anim-speed ease-out;
     animation-fill-mode:forwards;
     animation-delay: 2000ms;
-    @for $i from 1 through 21{
+    @for $i from 1 through 50{
         &:nth-child(#{$i}){
           animation-delay: $i * 100ms;
         }
