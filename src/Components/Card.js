@@ -1,5 +1,6 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
+import '../animations.scss';
 
 const Card = (props) => {
     return (

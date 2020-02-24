@@ -3,9 +3,11 @@ import './App.css';
 import Tags from './Components/Tags';
 import Header from './Components/Header';
 import Cards from './Components/Cards';
-import './animations.scss';
 import SadImage from './icons/sad-plants.png';
 import Json from './data/plants.json';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
 
 class App extends Component {
   constructor(props) {
@@ -14,13 +16,15 @@ class App extends Component {
       data: Json,
       filteredData: [],
       tags: [
+        "foliage",
+        "succulents and cacti",
+        "flowering",
         "minimal-sunlight",
         "moderate-sunlight",
         "intense-sunlight",
         "much-water",
-        "less-water",
-        "color-green",
-        "kaas"
+        "less-water"
+        
       ],
       currentTag: window.location.pathname.substring(1),
     }
@@ -74,9 +78,11 @@ class App extends Component {
         
         <Header changeCurrentTag={this.changeCurrentTag}/>
 
-        <div className="tags-container">
-          {this.renderTags()}
-        </div>
+        <Container >
+          <Row className="tags-container justify-content-center">
+            {this.renderTags()}
+          </Row>
+        </Container>
 
         {
           this.state.filteredData.length === 0 && this.state.currentTag ? 
