@@ -24,7 +24,6 @@ class App extends Component {
         "intense-sunlight",
         "much-water",
         "less-water"
-        
       ],
       currentTag: window.location.pathname.substring(1),
     }
